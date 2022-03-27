@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { MdFlightTakeoff } from "react-icons/md";
 import { useDispatch } from "react-redux";
 import api from "../../services/api";
-import { addReserve } from "../../store/modules/reserve/actions";
+import { addReserveRequest } from "../../store/modules/reserve/actions";
 import "./style.css";
 
 function Home() {
@@ -10,7 +10,7 @@ function Home() {
   const [trips, setTrips] = useState([]);
 
   function handleAdd(trip) {
-    dispatch(addReserve(trip));
+    dispatch(addReserveRequest(trip.id));
   }
 
   useEffect(() => {
